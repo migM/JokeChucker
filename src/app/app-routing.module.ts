@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { ViewerComponent } from './components/viewer/viewer.component';
+import { ErrorComponent } from './components/error/error.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'error', component: ErrorComponent },
+  { path: 'viewer', component: ViewerComponent },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

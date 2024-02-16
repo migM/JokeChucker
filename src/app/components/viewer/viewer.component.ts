@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  selector: 'app-viewer',
+  templateUrl: './viewer.component.html',
+  styleUrls: ['./viewer.component.scss']
 })
-export class AppComponent {
+export class ViewerComponent implements OnInit {
 
-  title = 'JokeChucker';
   jokeValue: string | undefined;
 
   constructor(private http: HttpClient){}
