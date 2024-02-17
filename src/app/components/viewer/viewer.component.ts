@@ -27,7 +27,7 @@ export class ViewerComponent {
   shareJoke(): void {
     const dialogRef = this.dialog.open(ShareModalComponent, {
       data: {jokeValue: this.jokeValue},
-      height: '40%',
+      height: '55%',
       width: '45%'
     }); 
     dialogRef.afterClosed().subscribe(_ => {

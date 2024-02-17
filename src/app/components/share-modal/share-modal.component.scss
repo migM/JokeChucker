@@ -6,50 +6,63 @@
     position: absolute;
 }
 
-.copy-button {
-    position: absolute;
-    left: 25%;
-    top: 45%;
+.tweet-button {
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px; 
     background-color: $purple;
     color: $yellow;
-    height: 25%;
-    width: 10%;
+    font-family: $wacky-font;
+    font-size: 24px; 
+    border: none;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
     cursor: pointer;
-    border-radius: 30px;
-
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    
     &:hover {
-        transform: scale(1.1); 
-        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
-        color:rgb(0, 210, 247);
-      }
+      transform: scale(1.1); 
+      box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
+      color:rgb(0, 210, 247);
+    }
 }
 
 .mail-button {
-    position: absolute;
-    right: 35%;
-    top: 45%;
+    left: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px; 
     background-color: $purple;
     color: black;
-    height: 25%;
-    width: 10%;
-    border-radius: 30px;  
-    
+    font-family: $wacky-font;
+    font-size: 24px; 
+    border: none;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
     cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    
     &:hover {
-        transform: scale(1.1); 
-        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
-        color:black;
-      }
+      transform: scale(1.1); 
+      box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
+      color:black;
+    }
 }
 
 .modal-dialog {
     display: flex;
     align-self: center;
-}
-
-.modal-content {
-    padding-top: 15px;
-    padding-left: 5px;
 }
 
 .close-button {
@@ -77,6 +90,7 @@
 .mat-mdc-dialog-surface.mdc-dialog__surface{
     padding-top: 15px;
 }
+
 .tweet {
     height: 32px;
     width: 32px;
