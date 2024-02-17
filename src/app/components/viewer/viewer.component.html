@@ -1,10 +1,10 @@
-
 <div class="viewer-container">
-
-    <button class="big-button" (click)="getJoke()">Chuck another one!</button>
+    <button *ngIf="timesChucked == 1" class="big-button" (click)="getJoke()">Chuck me a joke!</button>
+    <button *ngIf="timesChucked >= 2" class="big-button" (click)="getJoke()">Chuck another one!</button>
     <div class="background-image"></div>
     <div class="viewer-content">
       <h2>{{jokeValue}}</h2>
     </div>
   </div>
+  <button class="share-button">Share</button>
   <router-outlet></router-outlet>

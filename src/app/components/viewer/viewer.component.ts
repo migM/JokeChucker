@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ViewerComponent implements OnInit {
 
   jokeValue: string | undefined;
+  timesChucked: number  = 0;
 
   constructor(private http: HttpClient){}
 
@@ -17,6 +18,8 @@ export class ViewerComponent implements OnInit {
   }
 
   getJoke(){
+    this.timesChucked ++;
+    console.log(this.timesChucked);
     this.http.get<any>('https://api.chucknorris.io/jokes/random').subscribe(
       response => {
         this.jokeValue = response.value;
