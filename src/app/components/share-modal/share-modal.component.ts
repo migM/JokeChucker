@@ -39,14 +39,14 @@ export class ShareModalComponent {
 
   //copies the text gotten from the API call
   copyText(jokeText: string): void {
-  navigator.clipboard.writeText(jokeText)
-    .then(() => {
-      this.snackBar.open('Text copied to clipboard', 'Close', {
-        duration: 2000,
-      });
-    })
+    navigator.clipboard.writeText(jokeText)
+      .then(() => {
+        this.snackBar.open('Text copied to clipboard', 'Close', {
+          duration: 2000,
+        });
+      })
     .catch((error) => {
-      console.error('Failed to copy text: ', error);
+        console.error('Failed to copy text: ', error);
     });
-}
+  } 
 }
