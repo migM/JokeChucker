@@ -6,5 +6,5 @@
       <h2>{{jokeValue}}</h2>
     </div>
   </div>
-  <button class="share-button" (click)="shareJoke()">Share</button>
+  <button *ngIf="timesChucked > 1" class="share-button" (click)="shareJoke()">Share</button>
   <router-outlet></router-outlet>
