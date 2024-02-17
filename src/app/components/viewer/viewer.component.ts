@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ShareModalComponent } from '../share-modal/share-modal.component';
 
 @Component({
   selector: 'app-viewer',
@@ -11,15 +13,26 @@ export class ViewerComponent implements OnInit {
   jokeValue: string | undefined;
   timesChucked: number  = 0;
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient, public dialog: MatDialog){}
 
   ngOnInit(): void {
     this.getJoke();
   }
 
+  shareJoke(): any {
+    const dialogRef = this.dialog.open(ShareModalComponent, {
+      data: {jokeValue: this.jokeValue},
+      height: '40%',
+      width: '45%'
+    }); 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The share dialog was closed');
+    });
+
+  }
+
   getJoke(){
     this.timesChucked ++;
-    console.log(this.timesChucked);
     this.http.get<any>('https://api.chucknorris.io/jokes/random').subscribe(
       response => {
         this.jokeValue = response.value;

@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$purple: #8a2be2; // Purple color
+$yellow: #ffd700; // Yellow color
+$highlight: rgb(247, 0, 235); //text highlight
+
+// Define custom font family
+$wacky-font: 'Candara', cursive; 
