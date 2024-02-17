@@ -35,7 +35,9 @@
             "assets": [
               "src/favicon.png",
               "src/assets",
-              "src/norris.png"
+              "src/norris.png",
+              "src/logo-x-twitter.svg",
+              "src/logo-x-twitter.png"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",

@@ -5,12 +5,14 @@
   <div>
       <div class="modal-content">
         <h1>Share Chuck's hilarious joke... or else</h1>
-        <b>{{data.jokeValue}}</b>
+        <i>{{data.jokeValue}}</i>
       </div>
-      <button class="copy-button" title="Copy this joke to your clipboard" mat-icon-button (click)="copyText(data.jokeValue)">
+      <!-- <button class="copy-button" title="Copy this joke to your clipboard" mat-icon-button (click)="copyText(data.jokeValue)">
         <mat-icon>content_copy</mat-icon>
+      </button> -->
+      <button class="copy-button" title="Share this joke on Twitter/X!" mat-icon-button (click)="tweet(data.jokeValue)">
+        <img src="assets/logo-x-twitter.png" class="tweet" alt="Twitter Icon">
       </button>
-      
       <button class="mail-button" title="Forward this joke to all your workmates!" mat-icon-button (click)="sendEmail(data.jokeValue)">
         <mat-icon>mail</mat-icon>
       </button>

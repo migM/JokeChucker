@@ -30,6 +30,13 @@ export class ShareModalComponent {
 
   }
 
+  //copies the joke and opens Twitter/X page so user can share it
+  tweet(jokeText: string): void { 
+    const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(jokeText)}`;
+
+    window.location.href = twitterShareUrl;
+  }
+
   //copies the text gotten from the API call
   copyText(jokeText: string): void {
   navigator.clipboard.writeText(jokeText)
