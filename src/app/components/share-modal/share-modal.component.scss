@@ -15,6 +15,11 @@
     height: 25%;
     width: 10%;
     cursor: pointer;
+    &:hover {
+        transform: scale(1.1); 
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
+        color:rgb(0, 210, 247);
+      }
 }
 
 .mail-button {
@@ -26,6 +31,11 @@
     height: 25%;
     width: 10%;
     cursor: pointer;
+    &:hover {
+        transform: scale(1.1); 
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
+        color:rgb(0, 210, 247);
+      }
 }
 
 .modal-dialog {
@@ -47,4 +57,13 @@
     border-radius: 10px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
     cursor: pointer;
+    &:hover {
+        transform: scale(1.1); 
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
+        color:rgb(0, 210, 247);
+      }
+}
+
+.mat-mdc-dialog-surface.mdc-dialog__surface{
+    padding-top: 15px;
 }
