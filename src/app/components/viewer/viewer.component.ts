@@ -19,7 +19,7 @@ export class ViewerComponent implements OnInit {
     this.getJoke();
   }
 
-  shareJoke(): any {
+  shareJoke(): void {
     const dialogRef = this.dialog.open(ShareModalComponent, {
       data: {jokeValue: this.jokeValue},
       height: '40%',
@@ -28,6 +28,10 @@ export class ViewerComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The share dialog was closed');
     });
+  }
+
+  anotherJoke(): void{
+    this.timesChucked ++;
 
   }
 
