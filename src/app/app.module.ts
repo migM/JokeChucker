@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ViewerComponent } from './components/viewer/viewer.component';
-import { ErrorComponent } from './components/error/error.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ShareModalComponent } from './components/share-modal/share-modal.component';
 
@@ -17,7 +16,6 @@ import { ShareModalComponent } from './components/share-modal/share-modal.compon
   declarations: [
     AppComponent,
     ViewerComponent,
-    ErrorComponent,
     ShareModalComponent,
     ShareModalComponent
   ],

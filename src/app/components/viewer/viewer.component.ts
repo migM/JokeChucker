@@ -9,22 +9,20 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.scss']
 })
-export class ViewerComponent implements OnInit {
+export class ViewerComponent {
 
   public jokeValue: string | undefined;
   public timesChucked: number  = 0;
 
+  //Variables used to conditionally change image of Chuck next to get new joke button
   public deathJoke: boolean = false;
   public isSensitive: boolean = false;
   public chuckKicked: boolean = false;
 
-  constructor(private http: HttpClient, 
+  constructor(
+    private http: HttpClient, 
     public dialog: MatDialog,
     private snackBar: MatSnackBar){}
-
-  ngOnInit(): void {
-    this.getJoke();
-  }
 
   shareJoke(): void {
     const dialogRef = this.dialog.open(ShareModalComponent, {
@@ -32,22 +30,18 @@ export class ViewerComponent implements OnInit {
       height: '40%',
       width: '45%'
     }); 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(_ => {
       console.log('The share dialog was closed');
     });
   }
 
-  anotherJoke(): void{
-    this.timesChucked ++;
-  }
-
   getJoke(){
-    this.timesChucked ++;
     this.http.get<any>('https://api.chucknorris.io/jokes/random').subscribe(
-    response => {
-      if (response && response.value) {
-        this.jokeValue = response.value;
-        this.checkForSensitiveContent(this.jokeValue!);
+      response => {
+        if (response && response.value) {
+          this.jokeValue = response.value;
+          this.checkForSensitiveContent(this.jokeValue!);
+          this.timesChucked ++;
       } else {
         console.error('Chuck is tired of making jokes right now, try again later');
       }
@@ -58,7 +52,7 @@ export class ViewerComponent implements OnInit {
   );
 }
 
-    //copies the text gotten from the API call
+  //copies the text gotten from the API call
   copyText(jokeText: any): void {
       navigator.clipboard.writeText(jokeText)
         .then(() => {
@@ -71,6 +65,7 @@ export class ViewerComponent implements OnInit {
       });
   }
 
+  //Function for conditional rendering of different funny images of Chuck depending on text included in the joke retrieved
   checkForSensitiveContent(jokeValue: string): void {
       const sensitiveWords: { [key: string]: string[] } = {
         death: ['death', 'kill', 'murder'],

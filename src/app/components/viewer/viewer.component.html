@@ -1,22 +1,21 @@
 <div class="viewer-container">
-    <button *ngIf="timesChucked == 1" class="big-button" (click)="anotherJoke()">Chuck me a joke!</button>
-    <button *ngIf="timesChucked >= 2" class="big-button" (click)="getJoke()">Chuck another one!</button>
+    <button *ngIf="timesChucked == 0" class="big-button" (click)="getJoke()">Chuck me a joke!</button>
+    <button *ngIf="timesChucked >= 1" class="big-button" (click)="getJoke()">Chuck another one!</button>
     <div class="background-image" [ngStyle]="{ 'background-image': 
     deathJoke ? 'url(\'/assets/norris_death.png\')' :
     isSensitive ? 'url(\'/assets/norris_appaled.png\')' :
     chuckKicked ? 'url(\'/assets/norris_kick.png\')' :
     'url(\'/assets/norris.png\')'
   }">></div>
-    <!-- <img class="curl" *ngIf="timesChucked > 1" src="assets/curl.png"> -->
-    <div *ngIf="timesChucked > 1" class="viewer-content">
+    <div *ngIf="timesChucked > 0" class="viewer-content">
       <h2>{{jokeValue}}</h2>
     </div>
   </div>
   <div style="padding-right: 25%">
-    <button *ngIf="timesChucked > 1" class="copy-button" title="Copy this joke to your clipboard" mat-icon-button (click)="copyText(jokeValue)">
+    <button *ngIf="timesChucked > 0" class="copy-button" title="Copy this joke to your clipboard" mat-icon-button (click)="copyText(jokeValue)">
       <mat-icon>content_copy</mat-icon>
     </button>
-    <button *ngIf="timesChucked > 1" class="share-button" (click)="shareJoke()">Share</button>
+    <button *ngIf="timesChucked > 0" class="share-button" (click)="shareJoke()">Share</button>
 
   </div>
   <router-outlet></router-outlet>
