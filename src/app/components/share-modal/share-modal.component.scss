@@ -1,4 +1,5 @@
 @import "../../../styles.scss";
+@import '../../../shared-styles.scss';
 
 .button-container{
     bottom: 10px;
@@ -7,57 +8,20 @@
 }
 
 .tweet-button {
-    left: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 100px; 
-    background-color: $purple;
-    color: $yellow;
-    font-family: $wacky-font;
-    font-size: 24px; 
-    border: none;
-    border-radius: 10px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 50%;
-    z-index: 1;
+    @extend .common-button;
+    left: 10% !important;
+    top: 50% !important;
+    z-index: 1 !important;
     
     &:hover {
-      transform: scale(1.1); 
-      box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
-      color:rgb(0, 210, 247);
+      color: black !important;
     }
 }
 
 .mail-button {
     left: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 100px; 
-    background-color: $purple;
-    color: black;
-    font-family: $wacky-font;
-    font-size: 24px; 
-    border: none;
-    border-radius: 10px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: absolute;
     top: 50%;
-    z-index: 1;
-    
-    &:hover {
-      transform: scale(1.1); 
-      box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
-      color:black;
-    }
+    @extend .common-button;
 }
 
 .modal-dialog {
@@ -94,5 +58,4 @@
 .tweet {
     height: 32px;
     width: 32px;
-    color: $yellow;
 }
