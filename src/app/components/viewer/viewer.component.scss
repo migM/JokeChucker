@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center; 
   align-items: center; 
+  position: relative;
 }
 
 .viewer-content {
@@ -14,6 +15,8 @@
   border: 2px dotted black; 
   text-align: center;
   padding: 20px;
+  right: 20%;
+  position: absolute;
 }
 
 $purple: #8a2be2; // Purple color
@@ -23,7 +26,7 @@ $yellow: #ffd700; // Yellow color
 $wacky-font: 'Candara', cursive; 
 
 .big-button {
-  left: 20px;
+  left: 23%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,10 +42,24 @@ $wacky-font: 'Candara', cursive;
   cursor: pointer;
   transition: all 0.3s ease;
   position: absolute;
-  top: 50%;
+  top: 34%;
+  z-index: 99999;
   
   &:hover {
     transform: scale(1.1); 
     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
+    color:rgb(0, 210, 247);
   }
+}
+
+.background-image {
+  position: absolute;
+  bottom:0;
+  left: 0;
+  width: 30%;
+  height: 66%;
+  background-image: url('/assets/norris.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }

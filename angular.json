@@ -34,7 +34,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.png",
-              "src/assets"
+              "src/assets",
+              "src/norris.png"
             ],
             "styles": [
               "src/styles.scss"
