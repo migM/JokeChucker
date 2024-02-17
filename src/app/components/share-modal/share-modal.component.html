@@ -2,18 +2,20 @@
 
 <div class="modal-overlay"></div>
 <div class="modal-dialog">
-  <div class="modal-content">
-    <h1>Share Chuck's hilarious joke... or else</h1>
-    <b>{{data.jokeValue}}</b>
-</div>
-<button class="copy-button" mat-icon-button (click)="copyText(data.jokeValue)">
-  <mat-icon>content_copy</mat-icon>
-</button>
-
-<button class="mail-button" mat-icon-button (click)="sendEmail(data.jokeValue)">
-  <mat-icon>mail</mat-icon>
-</button>
-    <div class="button-container">
-      <button mat-button class="close-button" (click)="closeModal()">Close</button>
+  <div>
+      <div class="modal-content">
+        <h1>Share Chuck's hilarious joke... or else</h1>
+        <b>{{data.jokeValue}}</b>
+      </div>
+      <button class="copy-button" title="Copy this joke to your clipboard" mat-icon-button (click)="copyText(data.jokeValue)">
+        <mat-icon>content_copy</mat-icon>
+      </button>
+      
+      <button class="mail-button" title="Forward this joke to all your workmates!" mat-icon-button (click)="sendEmail(data.jokeValue)">
+        <mat-icon>mail</mat-icon>
+      </button>
+      <div class="button-container">
+        <button mat-button class="close-button" (click)="closeModal()">Close</button>
+      </div>
     </div>
 </div>
