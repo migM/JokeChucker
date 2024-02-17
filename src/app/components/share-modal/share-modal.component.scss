@@ -21,7 +21,14 @@
 .mail-button {
     left: 60%;
     top: 50%;
+    color: black;
     @extend .common-button;
+    &:hover {
+        transform: scale(1.1); 
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
+        color:black;
+      }
+    
 }
 
 .modal-dialog {
