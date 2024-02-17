@@ -67,6 +67,12 @@ export class ViewerComponent {
 
   //Function for conditional rendering of different funny images of Chuck depending on text included in the joke retrieved
   checkForSensitiveContent(jokeValue: string): void {
+
+      // Reset all boolean flags to false whenever we call a new joke so the image always refreshes
+      this.deathJoke = false;
+      this.isSensitive = false;
+      this.chuckKicked = false;
+
       const sensitiveWords: { [key: string]: string[] } = {
         death: ['death', 'kill', 'murder'],
         sensitive: ['two girls one cup', 'rape', 'fuck', 'ejaculation', '9-11'],
