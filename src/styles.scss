@@ -9,3 +9,10 @@ $highlight: rgb(247, 0, 235); //text highlight
 
 // Define custom font family
 $wacky-font: 'Candara', cursive; 
+
+.modal-content {
+    padding-top: 15px;
+    left: 5%;
+    position: absolute;
+    top: 5%;
+}
