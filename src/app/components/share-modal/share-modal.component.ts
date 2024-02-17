@@ -21,7 +21,7 @@ export class ShareModalComponent {
     this.dialogRef.close();
   }
 
-  //copies the joke and opens the user's default e-mail client so he can share it
+  //copies the joke and opens the user's default e-mail client so user can share it
   sendEmail(jokeText : string) : void {
     const mailTo = `mailto:`;
 
