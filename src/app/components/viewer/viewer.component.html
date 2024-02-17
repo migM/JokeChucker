@@ -2,9 +2,16 @@
     <button *ngIf="timesChucked == 1" class="big-button" (click)="anotherJoke()">Chuck me a joke!</button>
     <button *ngIf="timesChucked >= 2" class="big-button" (click)="getJoke()">Chuck another one!</button>
     <div class="background-image"></div>
+    <!-- <img class="curl" *ngIf="timesChucked > 1" src="assets/curl.png"> -->
     <div *ngIf="timesChucked > 1" class="viewer-content">
       <h2>{{jokeValue}}</h2>
     </div>
   </div>
-  <button *ngIf="timesChucked > 1" class="share-button" (click)="shareJoke()">Share</button>
+  <div>
+    <button *ngIf="timesChucked > 1" class="copy-button" title="Copy this joke to your clipboard" mat-icon-button (click)="copyText(jokeValue)">
+      <mat-icon>content_copy</mat-icon>
+    </button>
+    <button *ngIf="timesChucked > 1" class="share-button" (click)="shareJoke()">Share</button>
+
+  </div>
   <router-outlet></router-outlet>

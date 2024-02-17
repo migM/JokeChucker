@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ShareModalComponent } from '../share-modal/share-modal.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-viewer',
@@ -13,7 +14,9 @@ export class ViewerComponent implements OnInit {
   jokeValue: string | undefined;
   timesChucked: number  = 0;
 
-  constructor(private http: HttpClient, public dialog: MatDialog){}
+  constructor(private http: HttpClient, 
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar){}
 
   ngOnInit(): void {
     this.getJoke();
@@ -32,7 +35,6 @@ export class ViewerComponent implements OnInit {
 
   anotherJoke(): void{
     this.timesChucked ++;
-
   }
 
   getJoke(){
@@ -46,4 +48,17 @@ export class ViewerComponent implements OnInit {
       }
     );
   }
+
+    //copies the text gotten from the API call
+    copyText(jokeText: any): void {
+      navigator.clipboard.writeText(jokeText)
+        .then(() => {
+          this.snackBar.open('Text copied to clipboard', 'Close', {
+            duration: 2000,
+          });
+        })
+        .catch((error) => {
+          console.error('Failed to copy text: ', error);
+        });
+    }
 }

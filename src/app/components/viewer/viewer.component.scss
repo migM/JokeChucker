@@ -92,3 +92,36 @@
   right: 20%;
   position: absolute;
 }
+
+.copy-button {  
+  left: 83%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 50px; 
+  background-color: rgba(55, 151, 55, 0.582);
+  color: $yellow;
+  font-family: $wacky-font;
+  font-size: 24px; 
+  border: none;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 90%;
+  z-index: 1;
+  
+  &:hover {
+    transform: scale(1.1); 
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
+    color: $purple;
+  }
+}
+
+.curl{
+  z-index: 99999;
+  left: 629px;
+  position: absolute;
+}
