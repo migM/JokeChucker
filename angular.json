@@ -36,6 +36,9 @@
               "src/favicon.png",
               "src/assets",
               "src/norris.png",
+              "src/norris_appaled.png",
+              "src/norris_death.png",
+              "src/norris_kick.png",
               "src/logo-x-twitter.png",
               "src/curl.png"
             ],

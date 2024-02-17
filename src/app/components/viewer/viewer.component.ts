@@ -11,8 +11,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ViewerComponent implements OnInit {
 
-  jokeValue: string | undefined;
-  timesChucked: number  = 0;
+  public jokeValue: string | undefined;
+  public timesChucked: number  = 0;
+
+  public deathJoke: boolean = false;
+  public isSensitive: boolean = false;
+  public chuckKicked: boolean = false;
 
   constructor(private http: HttpClient, 
     public dialog: MatDialog,
@@ -40,25 +44,69 @@ export class ViewerComponent implements OnInit {
   getJoke(){
     this.timesChucked ++;
     this.http.get<any>('https://api.chucknorris.io/jokes/random').subscribe(
-      response => {
+    response => {
+      if (response && response.value) {
         this.jokeValue = response.value;
-      },
-      error =>{
-        console.error('Chuck is tired of making jokes right now, try again later', error);
+        this.checkForSensitiveContent(this.jokeValue!);
+      } else {
+        console.error('Chuck is tired of making jokes right now, try again later');
       }
-    );
-  }
+    },
+    error =>{
+      console.error('Chuck joke not available: ', error);
+    }
+  );
+}
 
     //copies the text gotten from the API call
-    copyText(jokeText: any): void {
+  copyText(jokeText: any): void {
       navigator.clipboard.writeText(jokeText)
         .then(() => {
           this.snackBar.open('Text copied to clipboard', 'Close', {
-            duration: 2000,
-          });
-        })
-        .catch((error) => {
-          console.error('Failed to copy text: ', error);
+          duration: 2000,
         });
-    }
+      })
+      .catch((error) => {
+        console.error('Failed to copy text: ', error);
+      });
+  }
+
+  checkForSensitiveContent(jokeValue: string): void {
+      const sensitiveWords: { [key: string]: string[] } = {
+        death: ['death', 'kill', 'murder'],
+        sensitive: ['two girls one cup', 'rape', 'fuck', 'ejaculation', '9-11'],
+        kick: ['kick']
+      };
+    
+      for (const key in sensitiveWords) {
+        if (Object.prototype.hasOwnProperty.call(sensitiveWords, key)) {
+          const words = sensitiveWords[key];
+          
+          if (words.some(word => jokeValue.includes(word))) {
+            switch (key) {
+              case 'death':
+                this.deathJoke = true;
+                this.isSensitive = false;
+                this.chuckKicked = false;
+
+                break;
+              case 'sensitive':
+                this.isSensitive = true;
+                this.chuckKicked = false;
+                this.deathJoke = false;
+
+                break;
+              case 'kick':
+                this.chuckKicked = true;
+                this.isSensitive = false;
+                this.deathJoke = false;
+
+                break;
+            }
+            return;
+          }
+        }
+      }
+      this.isSensitive = false;
+  }
 }
