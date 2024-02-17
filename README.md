@@ -53,7 +53,10 @@
 # > The Joke Chucker is your Chuck Norris joke generator. It chucks jokes! To run this application and have access to all the code that makes it work, open a command line in your desired local path and copy the following command to your command line:
  'git clone https://github.com/migM/JokeChucker'
 
-# > Inside your brand spanking new JokeChucker directory, make sure to navigate to /src/ and run the command 
+# > Inside your brand spanking new JokeChucker directory, make sure to navigate to /src/ ...
+'cd .\src\'
+
+# > ... and run the command 
 'npm install' 
 # to get all the dependencies for the project to run as it should
 
