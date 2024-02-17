@@ -5,7 +5,7 @@ import { ViewerComponent } from './components/viewer/viewer.component';
 import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo:"viewer", pathMatch: 'full' },
   { path: 'error', component: ErrorComponent },
   { path: 'viewer', component: ViewerComponent },
 
