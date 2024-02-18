@@ -36,7 +36,6 @@ fdescribe('ShareModalComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
   
   it('should open Twitter with joke text', () => {
     const jokeText = 'This is a joke';
@@ -45,5 +44,34 @@ fdescribe('ShareModalComponent', () => {
     const expectedUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(jokeText)}`;
     expect(window.open).toHaveBeenCalledWith(expectedUrl, '_blank');
   });
+  
+  it('should copy text to clipboard', () => {
+    const jokeText = 'This is a joke';
+    spyOn(navigator.clipboard, 'writeText').and.returnValue(Promise.resolve());
+    component.copyText(jokeText);
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith(jokeText);
+  });
 
+  // it('should send email', () => {
+  //   const jokeText = 'This is a joke';
+  //   spyOn(window, 'open');
+    
+  //   // Call the method under test
+  //   component.sendEmail(jokeText);
+  
+  //   // Verify that window.open is called with the mailto link
+  //   expect(window.open).toHaveBeenCalledWith(`mailto:`);
+  
+  // });
+
+
+  // it('should handle error while copying text to clipboard', async () => {
+  //   const jokeText = 'This is a joke';
+  //   const errorMessage = 'Clipboard write failed';
+  //   spyOn(navigator.clipboard, 'writeText').and.returnValue(Promise.reject(errorMessage));
+  //   spyOn(console, 'error');
+  //   component.copyText(jokeText);
+  //   expect(navigator.clipboard.writeText).toHaveBeenCalledWith(jokeText);
+  //   expect(console.error).toHaveBeenCalledWith('Failed to copy text: ', errorMessage);
+  // });
 });
