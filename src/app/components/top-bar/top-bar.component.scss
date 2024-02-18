@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+@import '../../../shared-styles.scss';
+
+.top-bar {
+    background-color: $purple;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  
+  .mat-select {
+    background-color: $purple; 
+    color: $yellow; 
+  }
+    
+  .form-field {
+    max-width: 50%; 
+  }

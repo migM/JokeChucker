@@ -11,20 +11,29 @@ import { AppComponent } from './app.component';
 import { ViewerComponent } from './components/viewer/viewer.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ShareModalComponent } from './components/share-modal/share-modal.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewerComponent,
     ShareModalComponent,
-    ShareModalComponent
+    ShareModalComponent,
+    TopBarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [
     provideAnimationsAsync()
