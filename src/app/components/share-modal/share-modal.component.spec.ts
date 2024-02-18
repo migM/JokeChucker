@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-fdescribe('ShareModalComponent', () => {
+describe('ShareModalComponent', () => {
   let component: ShareModalComponent;
   let fixture: ComponentFixture<ShareModalComponent>;
   let dialogRefSpy: jasmine.SpyObj<MatDialogRef<ShareModalComponent>>;
@@ -51,27 +51,4 @@ fdescribe('ShareModalComponent', () => {
     component.copyText(jokeText);
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(jokeText);
   });
-
-  // it('should send email', () => {
-  //   const jokeText = 'This is a joke';
-  //   spyOn(window, 'open');
-    
-  //   // Call the method under test
-  //   component.sendEmail(jokeText);
-  
-  //   // Verify that window.open is called with the mailto link
-  //   expect(window.open).toHaveBeenCalledWith(`mailto:`);
-  
-  // });
-
-
-  // it('should handle error while copying text to clipboard', async () => {
-  //   const jokeText = 'This is a joke';
-  //   const errorMessage = 'Clipboard write failed';
-  //   spyOn(navigator.clipboard, 'writeText').and.returnValue(Promise.reject(errorMessage));
-  //   spyOn(console, 'error');
-  //   component.copyText(jokeText);
-  //   expect(navigator.clipboard.writeText).toHaveBeenCalledWith(jokeText);
-  //   expect(console.error).toHaveBeenCalledWith('Failed to copy text: ', errorMessage);
-  // });
 });

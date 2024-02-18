@@ -15,19 +15,8 @@ export class TopBarComponent {
     private http: HttpClient ){}
 
 
-  getJokeByCategory(category: string) {
-    
+  getJokeByCategory(category: string) { 
     this.categorySelected.emit(category);
-    // const apiUrl = `https://api.chucknorris.io/jokes/random?category=${category}`;
-
-    // this.http.get(apiUrl).subscribe(
-    //   (response: any) => {
-    //     console.log('Random joke from category', category, ':', response.value);
-    //   },
-    //   error => {
-    //     console.error('Error fetching Chuck Norris joke:', error);
-    //   }
-    // );
   }
 
 
