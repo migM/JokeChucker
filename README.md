@@ -1,4 +1,4 @@
-# > The Joke Chucker is your Chuck Norris joke generator. 
+# The Joke Chucker is your Chuck Norris joke generator. 
 ## It chucks jokes! To run this application and have access to all the code that makes it work, open a command line in your desired local path and copy the following command to your command line:
  `git clone https://github.com/migM/JokeChucker`
 
@@ -6,8 +6,7 @@
 `cd .\src\`
 
 ## > ... and run the command 
-`npm install` 
-# to get all the dependencies for the project to run as it should. Make sure you have Node.Js ('https://nodejs.org/en/download') and all the necessary auxiliary tools to run an angular application 
+`npm install` to get all the dependencies for the project to run as it should. Make sure you have Node.Js (`https://nodejs.org/en/download`) and all the necessary auxiliary tools to run an angular application 
 
 ## > After getting those sweet, sweet packages installed simply run the command 
 `ng serve`
