@@ -9,7 +9,7 @@ import { TopBarComponent } from '../top-bar/top-bar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-fdescribe('ViewerComponent', () => {
+describe('ViewerComponent', () => {
   let component: ViewerComponent;
   let fixture: ComponentFixture<ViewerComponent>;
   let httpClientSpy: { get: jasmine.Spy };
@@ -61,6 +61,23 @@ fdescribe('ViewerComponent', () => {
       
       expect(component.deathJoke).toBeFalse();
       expect(component.isSensitive).toBeTruthy();
+      expect(component.chuckKicked).toBeFalse();
+      });
+
+    it('should call checkForSensitiveContent method and update flags - option sensitive', () => {
+      const jokeValue = 'This is a kick joke';
+      component.checkForSensitiveContent(jokeValue);
+      
+      expect(component.deathJoke).toBeFalse();
+      expect(component.isSensitive).toBeFalse();
+      expect(component.chuckKicked).toBeTrue();
+      });
+        
+      it('should call checkForSensitiveContent method and update flags - not specific case', () => {
+      const jokeValue = 'This is a random joke';
+      component.checkForSensitiveContent(jokeValue);
+      expect(component.deathJoke).toBeFalse();
+      expect(component.isSensitive).toBeFalse();
       expect(component.chuckKicked).toBeFalse();
       });
 });
