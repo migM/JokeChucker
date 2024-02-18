@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-top-bar',
@@ -8,22 +8,28 @@ import { Component } from '@angular/core';
 })
 export class TopBarComponent {
 
+  @Output() categorySelected: EventEmitter<string> = new EventEmitter<string>();
+  category:string = '';
+  
   constructor(
     private http: HttpClient ){}
 
 
   getJokeByCategory(category: string) {
-    const apiUrl = `https://api.chucknorris.io/jokes/random?category=${category}`;
+    
+    this.categorySelected.emit(category);
+    // const apiUrl = `https://api.chucknorris.io/jokes/random?category=${category}`;
 
-    this.http.get(apiUrl).subscribe(
-      (response: any) => {
-        console.log('Random joke from category', category, ':', response.value);
-      },
-      error => {
-        console.error('Error fetching Chuck Norris joke:', error);
-      }
-    );
+    // this.http.get(apiUrl).subscribe(
+    //   (response: any) => {
+    //     console.log('Random joke from category', category, ':', response.value);
+    //   },
+    //   error => {
+    //     console.error('Error fetching Chuck Norris joke:', error);
+    //   }
+    // );
   }
+
 
 }
 

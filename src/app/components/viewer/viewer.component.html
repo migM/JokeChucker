@@ -1,12 +1,26 @@
-<app-top-bar style="height: 57px; display: block;"></app-top-bar> 
+<app-top-bar (categorySelected)="onCategorySelected($event)" style="height: 57px; display: block;"></app-top-bar> 
 <div class="viewer-container">
-    <button *ngIf="timesChucked == 0" class="big-button" (click)="getJoke()">Chuck me a joke!</button>
-    <button *ngIf="timesChucked >= 1" class="big-button" (click)="getJoke()">Chuck another one!</button>
-    <div class="background-image" [ngStyle]="{ 'background-image': 
-    deathJoke ? 'url(\'/assets/norris_death.png\')' :
-    isSensitive ? 'url(\'/assets/norris_appaled.png\')' :
-    chuckKicked ? 'url(\'/assets/norris_kick.png\')' :
-    'url(\'/assets/norris.png\')'
+    <button *ngIf="timesChucked == 0"
+            class="big-button"
+            [ngClass]="{ 
+             'celebrity': category === 'celebrity', 
+             'political': category === 'political', 
+             'dev': category === 'dev' }" 
+             (click)="getJoke()">Chuck me a joke!</button>
+
+    <button *ngIf="timesChucked >= 1" 
+            class="big-button" 
+            [ngClass]="{ 'celebrity': category === 'celebrity', 
+             'political': category === 'political', 
+             'dev': category === 'dev' }" 
+            (click)="getJoke()">Chuck another one!</button>
+
+    <div class="background-image" [ngStyle]="{ 
+      'background-image': 
+      deathJoke ? 'url(\'/assets/norris_death.png\')' :
+      isSensitive ? 'url(\'/assets/norris_appaled.png\')' :
+      chuckKicked ? 'url(\'/assets/norris_kick.png\')' :
+      'url(\'/assets/norris.png\')'
   }">></div>
     <div *ngIf="timesChucked > 0" class="viewer-content">
       <h2>{{jokeValue}}</h2>

@@ -19,6 +19,9 @@ export class ViewerComponent {
   public isSensitive: boolean = false;
   public chuckKicked: boolean = false;
 
+  //variables for categories
+  public category: string = '';
+
   constructor(
     private http: HttpClient, 
     public dialog: MatDialog,
@@ -35,22 +38,30 @@ export class ViewerComponent {
     });
   }
 
-  getJoke(){
-    this.http.get<any>('https://api.chucknorris.io/jokes/random').subscribe(
-      response => {
+  getJoke() {
+    debugger;
+    let apiUrl = 'https://api.chucknorris.io/jokes/random';
+    
+    // Append category to the apiUrl if category is not empty
+    if (this.category) {
+      apiUrl += `?category=${this.category}`;
+    }
+  
+    this.http.get<any>(apiUrl).subscribe(
+      (response: any) => {
         if (response && response.value) {
           this.jokeValue = response.value;
           this.checkForSensitiveContent(this.jokeValue!);
-          this.timesChucked ++;
-      } else {
-        console.error('Chuck is tired of making jokes right now, try again later');
+          this.timesChucked++;
+        } else {
+          console.error('Chuck is tired of making jokes right now, try again later');
+        }
+      },
+      error => {
+        console.error('Chuck joke not available: ', error);
       }
-    },
-    error =>{
-      console.error('Chuck joke not available: ', error);
-    }
-  );
-}
+    );
+  }
 
   //copies the text gotten from the API call
   copyText(jokeText: any): void {
@@ -87,20 +98,43 @@ export class ViewerComponent {
             switch (key) {
               case 'death':
                 this.deathJoke = true;
-
                 break;
+
               case 'sensitive':
                 this.isSensitive = true;
-
                 break;
+
               case 'kick':
                 this.chuckKicked = true;
-
                 break;
+
             }
             return;
           }
         }
       }
   }
+
+  onCategorySelected(category: string): void {
+    switch (category) {
+      case 'celebrity':
+        this.category = 'celebrity';
+        break;
+      case 'political':
+        this.category = 'political';
+        break;
+      case 'dev':
+        this.category = 'dev';
+        break;
+      case 'random':
+          this.category = '';
+          break;
+      default:
+        this.category = '';
+        break;
+    }
+  }
+  
+
+
 }

@@ -45,4 +45,13 @@ fdescribe('ViewerComponent', () => {
   it('should create the component', () => {
     expect(component).toBeTruthy();
     });
+
+    it('should call checkForSensitiveContent method and update flags - option death', () => {
+      const jokeValue = 'This is a death joke';
+      component.checkForSensitiveContent(jokeValue);
+      
+      expect(component.deathJoke).toBeTrue();
+      expect(component.isSensitive).toBeFalse();
+      expect(component.chuckKicked).toBeFalse();
+      });      
 });
