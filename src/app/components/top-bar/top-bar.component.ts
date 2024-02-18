@@ -14,12 +14,10 @@ export class TopBarComponent {
   constructor(
     private http: HttpClient ){}
 
-
+  //emits category value selected on dropdown to be handled in viewer
   getJokeByCategory(category: string) { 
     this.categorySelected.emit(category);
   }
-
-
 }
 
 

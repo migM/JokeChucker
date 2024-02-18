@@ -37,6 +37,10 @@ describe('ShareModalComponent', () => {
     fixture.detectChanges();
   });
   
+  it('should create the top bar component', () => {
+    expect(component).toBeTruthy();
+  });
+
   it('should open Twitter with joke text', () => {
     const jokeText = 'This is a joke';
     spyOn(window, 'open');

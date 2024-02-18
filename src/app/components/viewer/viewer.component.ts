@@ -19,7 +19,7 @@ export class ViewerComponent {
   public isSensitive: boolean = false;
   public chuckKicked: boolean = false;
 
-  //variables for categories
+  //variable for passing categories in API call
   public category: string = '';
 
   constructor(
@@ -27,6 +27,7 @@ export class ViewerComponent {
     public dialog: MatDialog,
     private snackBar: MatSnackBar){}
 
+  //Opens modal component intended to share joke attained 
   shareJoke(): void {
     const dialogRef = this.dialog.open(ShareModalComponent, {
       data: {jokeValue: this.jokeValue},
@@ -38,8 +39,8 @@ export class ViewerComponent {
     });
   }
 
+  //makes call to Chuck Norris jokes API to get random joke when no categories are selected, and gets joke by category if such argument is provided
   getJoke() {
-    debugger;
     let apiUrl = 'https://api.chucknorris.io/jokes/random';
     
     // Append category to the apiUrl if category is not empty
@@ -52,7 +53,7 @@ export class ViewerComponent {
         if (response && response.value) {
           this.jokeValue = response.value;
           this.checkForSensitiveContent(this.jokeValue!);
-          this.timesChucked++;
+          this.timesChucked ++;
         } else {
           console.error('Chuck is tired of making jokes right now, try again later');
         }
@@ -115,23 +116,29 @@ export class ViewerComponent {
       }
   }
 
+  //handles the category selected in the dropdown on modal component so we pass whatever value is in it to the API call
   onCategorySelected(category: string): void {
     switch (category) {
       case 'celebrity':
         this.category = 'celebrity';
         break;
+
       case 'political':
         this.category = 'political';
         break;
+
       case 'dev':
         this.category = 'dev';
         break;
+
       case 'random':
           this.category = '';
           break;
+
       default:
         this.category = '';
         break;
+
     }
   }
 }
