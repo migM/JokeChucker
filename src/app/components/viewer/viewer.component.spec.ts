@@ -53,5 +53,14 @@ fdescribe('ViewerComponent', () => {
       expect(component.deathJoke).toBeTrue();
       expect(component.isSensitive).toBeFalse();
       expect(component.chuckKicked).toBeFalse();
-      });      
+    });   
+      
+    it('should call checkForSensitiveContent method and update flags - option sensitive', () => {
+      const jokeValue = 'This is a fuck joke';
+      component.checkForSensitiveContent(jokeValue);
+      
+      expect(component.deathJoke).toBeFalse();
+      expect(component.isSensitive).toBeTruthy();
+      expect(component.chuckKicked).toBeFalse();
+      });
 });
