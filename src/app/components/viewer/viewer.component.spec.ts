@@ -9,10 +9,9 @@ import { TopBarComponent } from '../top-bar/top-bar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-fdescribe('ViewerComponent', () => {
+describe('ViewerComponent', () => {
   let component: ViewerComponent;
   let fixture: ComponentFixture<ViewerComponent>;
-  let httpClientSpy: { get: jasmine.Spy };
   let matDialogSpy: { open: jasmine.Spy };
   let matSnackBarSpy: { open: jasmine.Spy };
  
@@ -102,5 +101,31 @@ fdescribe('ViewerComponent', () => {
       expect(spyCheckSensitiveContent).toHaveBeenCalledWith('my joke');
       expect(component.jokeValue).toEqual('my joke');
     }));
+
+    it('should set category to "celebrity" when category is "celebrity"', () => {
+      component.onCategorySelected('celebrity');
+      expect(component.category).toEqual('celebrity');
+    });
+    
+    it('should set category to "political" when category is "political"', () => {
+      component.onCategorySelected('political');
+      expect(component.category).toEqual('political');
+    });
+    
+    it('should set category to "dev" when category is "dev"', () => {
+      component.onCategorySelected('dev');
+      expect(component.category).toEqual('dev');
+    });
+    
+    it('should set category to empty string when category is "random"', () => {
+      component.onCategorySelected('random');
+      expect(component.category).toEqual('');
+    });
+    
+    it('should set category to empty string when category is not recognized', () => {
+      component.onCategorySelected('unknown');
+      expect(component.category).toEqual('');
+    });
+    
 
 });

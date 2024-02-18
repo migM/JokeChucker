@@ -134,7 +134,4 @@ export class ViewerComponent {
         break;
     }
   }
-  
-
-
 }
