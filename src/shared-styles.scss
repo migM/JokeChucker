@@ -21,7 +21,7 @@
     &:hover {
       transform: scale(1.1); 
       box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
-      color:rgb(0, 210, 247);
+      color:$highlight;
     }
 }
 
@@ -47,6 +47,6 @@
   &:hover {
     transform: scale(1.1); 
     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
-    color: $purple;
+    color: $highlight;
   }
 }
