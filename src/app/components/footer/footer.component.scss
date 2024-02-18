@@ -1,0 +1,24 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center; 
+}
+
+.powered-by {
+  font-style: italic;
+  margin-right: 5px;
+}
+
+.linkedin-link {
+  color: #fff;
+  text-decoration: none;
+  width: 25px;
+  padding-left:10px;
+}
+
+.linkedin-link:hover {
+  color: #0077b5;
+}
