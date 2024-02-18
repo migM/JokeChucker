@@ -34,7 +34,7 @@ export class ShareModalComponent {
   tweet(jokeText: string): void { 
     const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(jokeText)}`;
 
-    window.location.href = twitterShareUrl;
+    window.open(twitterShareUrl, '_blank');
   }
 
   //copies the text gotten from the API call

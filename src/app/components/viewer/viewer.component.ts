@@ -75,7 +75,7 @@ export class ViewerComponent {
 
       const sensitiveWords: { [key: string]: string[] } = {
         death: ['death', 'kill', 'murder'],
-        sensitive: ['two girls one cup', 'rape', 'fuck', 'ejaculation', '9-11'],
+        sensitive: [ 'fuck'],
         kick: ['kick']
       };
     
@@ -87,20 +87,14 @@ export class ViewerComponent {
             switch (key) {
               case 'death':
                 this.deathJoke = true;
-                this.isSensitive = false;
-                this.chuckKicked = false;
 
                 break;
               case 'sensitive':
                 this.isSensitive = true;
-                this.chuckKicked = false;
-                this.deathJoke = false;
 
                 break;
               case 'kick':
                 this.chuckKicked = true;
-                this.isSensitive = false;
-                this.deathJoke = false;
 
                 break;
             }
@@ -108,6 +102,5 @@ export class ViewerComponent {
           }
         }
       }
-      this.isSensitive = false;
   }
 }
