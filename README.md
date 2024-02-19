@@ -2,7 +2,7 @@
 
 ## It chucks jokes! To run this application and have access to all the code that makes it work, we need a few things off the bat:
 - GIT - Download here: ('https://git-scm.com/downloads')
-> so you have access to all of GIT's functionalities and are able to clone the project directly to our machine
+> so you have access to all of GIT's functionalities and are able to clone the project directly to your machine
 
 - Node.Js - Download here: ('https://nodejs.org/en/download')
 > so you can get the packages, build, test and development server tools
