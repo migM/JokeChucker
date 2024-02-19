@@ -14,7 +14,7 @@
  `git clone https://github.com/migM/JokeChucker`
 
 ## > Inside your brand spanking new JokeChucker directory, make sure to navigate to /src/ ...
-`cd .\src\`
+`cd .\JokeChucker\src\`
 
 ## > ... and run the command 
 `npm install` to get all the dependencies for the project to run as it should.
