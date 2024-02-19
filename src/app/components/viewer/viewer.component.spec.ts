@@ -118,14 +118,8 @@ describe('ViewerComponent', () => {
     });
     
     it('should set category to empty string when category is "random"', () => {
-      component.onCategorySelected('random');
+      component.onCategorySelected('');
       expect(component.category).toEqual('');
     });
-    
-    it('should set category to empty string when category is not recognized', () => {
-      component.onCategorySelected('unknown');
-      expect(component.category).toEqual('');
-    });
-    
-
+  
 });

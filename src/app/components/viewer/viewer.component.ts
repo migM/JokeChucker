@@ -118,27 +118,6 @@ export class ViewerComponent {
 
   //handles the category selected in the dropdown on modal component so we pass whatever value is in it to the API call
   onCategorySelected(category: string): void {
-    switch (category) {
-      case 'celebrity':
-        this.category = 'celebrity';
-        break;
-
-      case 'political':
-        this.category = 'political';
-        break;
-
-      case 'dev':
-        this.category = 'dev';
-        break;
-
-      case 'random':
-          this.category = '';
-          break;
-
-      default:
-        this.category = '';
-        break;
-
-    }
+    this.category = category;
   }
 }
