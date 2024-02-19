@@ -1,8 +1,12 @@
 # The Joke Chucker is your Chuck Norris joke generator. 
-## It chucks jokes! To run this application and have access to all the code that makes it work, open a command line in your desired local path and copy the following command to your command line:
- `git clone https://github.com/migM/JokeChucker`
 
-(no GIT on your machine? no problem! Download here: ('https://git-scm.com/downloads'))
+## It chucks jokes! To run this application and have access to all the code that makes it work, we need a few things off the bat:
+-> GIT - Download here: ('https://git-scm.com/downloads'))
+-> Node.Js - Download here: ('https://nodejs.org/en/download'))
+-> Visual Studio Code - Download here: ('https://code.visualstudio.com/download') 
+
+## Once you have these, open a command line in the desired path on your machine and copy the following command to your command line:
+ `git clone https://github.com/migM/JokeChucker`
 
 ## > Inside your brand spanking new JokeChucker directory, make sure to navigate to /src/ ...
 `cd .\src\`
@@ -10,11 +14,13 @@
 ## > ... and run the command 
 `npm install` to get all the dependencies for the project to run as it should. Make sure you have Node.Js ('https://nodejs.org/en/download') and all the necessary auxiliary tools to run an angular application 
 
-## > After getting those sweet, sweet packages installed simply run the command 
+## > After getting those sweet, sweet packages installed simply run the command ...
 `ng serve`
-## and open your browser on 
+
+## ... and open your browser on:
 `http://localhost:4200`
-## after that, interact with the page and it should be self-explanatory from there!
+
+## After that, interact with the page and it should be self-explanatory from there!
 
 
 
