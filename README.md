@@ -2,6 +2,8 @@
 ## It chucks jokes! To run this application and have access to all the code that makes it work, open a command line in your desired local path and copy the following command to your command line:
  `git clone https://github.com/migM/JokeChucker`
 
+(no GIT on your machine? no problem! Download here: ('https://git-scm.com/downloads'))
+
 ## > Inside your brand spanking new JokeChucker directory, make sure to navigate to /src/ ...
 `cd .\src\`
 
