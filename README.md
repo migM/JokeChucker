@@ -115,7 +115,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
  > Better test coverage; given that most of the logic on this project is based on the viewer component, the most coverage lies in that specific component. However, in an ideal situation, the project would have around the same coverage across all components.
 
- > A more profoundly developed theming structure around the styles; the styles attributed to individual parts of the app were shared to have a semblance of a theme, but a lot of specification wasn't made around this topic beforehand: a general design goal to make it more concise aside from a single page application with the same colors repeating across buttons would ensure a better looking UI and better readability. This would ideally entail UI design for and allowing customization to different screen sizes and devices.
+ > A more profoundly developed theming structure around the styles; the styles attributed to individual parts of the app were shared to have a semblance of a theme, but a lot of specification wasn't made around this topic beforehand: a general design goal to make it more concise aside from a single page application with the same colors repeating across buttons would ensure a better looking UI/UX and better readability. This would ideally entail UI design for and allowing customization to different screen sizes and devices.
 
  > More categories and share functionalities similar to the ones in place; such as for example share to Facebook and all the Meta platforms, a print functionality and overall more options to choose from the dropdown since the API provides several categories that were not included for the sake of simplifying the project given the time restraints.
 
